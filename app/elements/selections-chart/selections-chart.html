@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
     <google-chart
       type="pie"
-      options='{"pieHole": 0.4}'
+      options='{"pieHole": 0.4, "backgroundColor": { "fill":"transparent" }, "legend": {"position": "none"}}'
       cols='[{"label": "Ort", "type": "string"},{"label": "Stimmen", "type": "number"}]'
       rows="{{_toRowFormat(selections.*)}}"
     >

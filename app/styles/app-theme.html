@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
 
 <style is="custom-style">
 
@@ -25,17 +26,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /* Application theme */
 
   :root {
-    --primary-text-color: #212121;
-    --primary-background-color: #ffffff;
+    --primary-text-color: #f0f0f0;
+    --primary-background-color: #212121;
     --secondary-text-color: #737373;
     --disabled-text-color: #9b9b9b;
     --divider-color: #dbdbdb;
-    --primary-color: #3f51b5;
-    --light-primary-color: #c5cae9;
-    --dark-primary-color: #303f9f;
-    --accent-color: #ff4081;
-    --light-accent-color: #ff80ab;
-    --dark-accent-color: #f50057;
+    --primary-color: var(--paper-blue-grey-500);
+    --light-primary-color: var(--paper-blue-grey-300);
+    --dark-primary-color: var(--paper-blue-grey-700);
+    --accent-color: var(--paper-lime-a200);
+    --light-accent-color: var(--paper-line-a100);
+    --dark-accent-color: var(--paper-lime-a400);
 
     /* Components */
   }
@@ -47,13 +48,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     @apply(--layout-vertical);
   }
 
+  app-toolbar {
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+  }
+
+  app-toolbar > div[title] {
+    @apply(--paper-font-title);
+
+  }
+
   /* Breakpoints */
 
   /* Small */
   @media (max-width: 600px) {}
 
   /* Tablet+ */
-  @media (min-width: 601px) {}
+  @media (min-width: 801px) and (max-width: 1200px) {
+    poll-app {
+      padding: 48px 128px;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    poll-app {
+      padding: 48px 256px;
+    }
+  }
+
+
 
   /* Material Design Adaptive Breakpoints */
   /*

@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       paper-material {
-        background: white;
+        background: #424242;
         padding: 16px;
       }
     </style>
@@ -28,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <location-selector selected="{{location}}" locations="{{locations}}" on-select="_select"></location-selector>
 
     <selection-data selections="{{selections}}"></selection-data>
-    <paper-material elevation="1" class="layout horizontal">
+    <paper-material elevation="1" class="layout vertical">
       <div class="paper-font-title">Ergebnis:</div>
       <selections-chart selections="{{selections}}" class="self-center"></selections-chart>
     </paper-material>
