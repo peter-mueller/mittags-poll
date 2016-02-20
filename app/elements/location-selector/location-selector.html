@@ -36,8 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <location-data locations="{{locations}}"></location-data>
-    <paper-radio-group selected="{{selected}}" allow-empty-selection class="layout vertical">
+    <paper-radio-group selected="{{selected}}" allow-empty-selection class="layout vertical" on-selected-changed="_select">
       <template is="dom-repeat" items="{{_toArray(locations)}}">
         <paper-radio-button name="{{item.name}}">
           <div class="layout horizontal center">
@@ -61,7 +60,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           selected: {
             type: String,
             notify: true
-          }
+          },
+          locations: Object
+        },
+
+        _select: function(e) {
+          this.fire('select', e.detail.value);
         },
 
         _open: function (e) {
