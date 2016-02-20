@@ -60,14 +60,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 
 <body unresolved>
-  <span id="browser-sync-binding"></span>
-  <template is="dom-bind" id="app">
-    <location-selector></location-selector>
-  </template>
+<span id="browser-sync-binding"></span>
+<template is="dom-bind" id="app">
+  <location-selector selected="{{location}}"></location-selector>
+  <div>{{location}}</div>
+</template>
 
-  <!-- build:js scripts/app.js -->
-  <script src="scripts/app.js"></script>
-  <!-- endbuild-->
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild-->
 </body>
 
 </html>
