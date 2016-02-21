@@ -45,7 +45,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _select: function(e) {
-        this.set('selections.peter', e.detail);
+        if(!this.selections)
+          this.selections = {};
+        this.set('selections.' + this.user.uid, e.detail);
       }
     });
   })();

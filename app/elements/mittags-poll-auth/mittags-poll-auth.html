@@ -9,28 +9,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="..\..\bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/firebase-element/firebase-auth.html">
 <link rel="import" href="../../bower_components/firebase-element/firebase.html">
-<link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
 
-<dom-module id="selection-data">
+<dom-module id="mittags-poll-auth">
   <template>
-    <firebase-document
-      location="https://mittags-poll.firebaseio.com/selections"
-      data="{{selections}}"
-    ></firebase-document>
+    <firebase-auth user="{{user}}" location="https://mittags-poll.firebaseio.com/" provider="github" ref="{{ref}}" on-login="_navigate" redirect id="firebaseAuth"></firebase-auth>
   </template>
   <script>
   (function() {
     'use strict';
 
     Polymer({
-      is: 'selection-data',
+      is: 'mittags-poll-auth',
 
       properties: {
-        selections: {
+        user: {
           type: Object,
           notify: true
-        }
+        },
+        ref: Object
+      },
+      login: function() {
+        this.$.firebaseAuth.login();
+      },
+      logout: function() {
+        this.$.firebaseAuth.logout();
+      },
+      _navigate: function() {
+        page.redirect('/');
       }
     });
   })();

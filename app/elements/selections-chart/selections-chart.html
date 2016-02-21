@@ -45,6 +45,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       _toRowFormat: function(changeRecord) {
         var selections = changeRecord.base;
+        if (!selections)
+          return [];
         var list =  Object.keys(selections).map(function (key) {
           return selections[key];
         });
@@ -55,7 +57,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             result[v] = result[v] + 1 || 1;
           }
         });
-        console.log(result);
         var asArray = Object.keys(result).sort().map(function (key) {
           return [key, result[key]];
         });

@@ -9,9 +9,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/firebase-element/firebase.html">
+<link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
 
 <dom-module id="location-data">
   <template>
+    <firebase-document
+      location="https://mittags-poll.firebaseio.com/locations"
+      data="{{locations}}"
+    ></firebase-document>
   </template>
   <script>
     (function () {
@@ -23,15 +29,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         properties: {
           locations: {
             type: Object,
-            value: function () {
-              return {
-                ITM: {pdf: "https://www.allianz.com.ar/sites/default/files/productos/Granizo.pdf"},
-                SWM: {pdf: "http://www.wpi.edu/Images/CMS/Provost/landscape.pdf"},
-                AWM: {pdf: "asdf"},
-                Grieche: {pdf: "asdf"},
-                Egal: {}
-              }
-            },
             notify: true
           }
         }
