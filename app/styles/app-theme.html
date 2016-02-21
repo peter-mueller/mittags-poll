@@ -31,12 +31,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --secondary-text-color: #737373;
     --disabled-text-color: #9b9b9b;
     --divider-color: #dbdbdb;
-    --primary-color: var(--paper-blue-grey-500);
-    --light-primary-color: var(--paper-blue-grey-300);
-    --dark-primary-color: var(--paper-blue-grey-700);
-    --accent-color: var(--paper-lime-a200);
-    --light-accent-color: var(--paper-line-a100);
-    --dark-accent-color: var(--paper-lime-a400);
+    --primary-color: var(--paper-green-500);
+    --light-primary-color: var(--paper-green-300);
+    --dark-primary-color: var(--paper-green-700);
+    --accent-color: var(--paper-yellow-a200);
+    --light-accent-color: var(--paper-yellow-a100);
+    --dark-accent-color: var(--paper-yellow-a400);
 
     /* Components */
   }
@@ -61,17 +61,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /* Breakpoints */
 
   /* Small */
-  @media (max-width: 600px) {}
+  @media (max-width: 600px) {
+    iron-pages {
+      padding-top: 16px;
+    }
+  }
 
   /* Tablet+ */
   @media (min-width: 801px) and (max-width: 1200px) {
-    poll-app {
+    iron-pages {
       padding: 48px 128px;
     }
   }
 
   @media (min-width: 1201px) {
-    poll-app {
+    iron-pages {
       padding: 48px 256px;
     }
   }

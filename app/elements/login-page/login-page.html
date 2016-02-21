@@ -21,11 +21,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       paper-button {
-        margin-top: 32px;
         color: var(--accent-color);
+        margin-bottom: 8px;
+      }
+
+      paper-material {
+        background: #424242;
+      }
+
+      #login {
+        margin: 32px
+      }
+
+      iron-image {
+        width: 300px;
+        height: 400px;
       }
     </style>
-      <paper-button on-tap="_login">LOGIN</paper-button>
+      <paper-material elevation="1" class="layout horizontal">
+        <iron-image src="http://i.imgur.com/1qTcIHK.jpg" sizing="cover" preload fade></iron-image>
+        <div class="layout vertical self-end" id="login">
+          <paper-button on-tap="_login">LOGIN</paper-button>
+          <div class="paper-font-code1">using GitHub</div>
+        </div>
+
+      </paper-material>
   </template>
   <script>
   (function() {
