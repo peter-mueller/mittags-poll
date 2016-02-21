@@ -24,20 +24,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     // Routes
     page('*', function(ctx, next) {
-      next();
+        next();
+
     });
 
     page('/', function() {
+      console.log(app.user);
+      if (!app.user) {
+        page.redirect('/login');
+      }
       app.route = 'home';
+    });
+
+    page('/login', function() {
+      app.route = 'login';
     });
 
     page(app.baseUrl, function() {
+      if (!app.user) {
+        page.redirect('/login');
+        return;
+      }
       app.route = 'home';
-    });
-
-    // 404
-    page('*', function() {
-      page.redirect(app.baseUrl);
     });
 
     // add #! before urls

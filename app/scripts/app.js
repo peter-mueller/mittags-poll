@@ -23,6 +23,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // app.baseUrl = '/polymer-starter-kit/';
   }
 
+  app._login = function() {
+    app.$.auth.login();
+  };
+
+  app._logout = function() {
+    app.$.auth.logout();
+    page.redirect("/login");
+  };
+
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {

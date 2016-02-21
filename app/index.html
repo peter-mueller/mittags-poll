@@ -62,15 +62,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <body unresolved>
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app">
-<app-header-layout>
-  <app-header shadow>
-    <app-toolbar>
-      <div title spacer>Mittags-Poll</div>
-    </app-toolbar>
-  </app-header>
+  <app-header-layout>
+    <app-header shadow>
+      <app-toolbar>
+        <div title spacer class="flex">Mittags-Poll</div>
+        <template is="dom-if" if="{{user}}">
+          <paper-button on-tap="_logout">LOGOUT</paper-button>
+        </template>
+      </app-toolbar>
+    </app-header>
 
-  <poll-app></poll-app>
-</app-header-layout>
+    <mittags-poll-auth user="{{user}}" id="auth"></mittags-poll-auth>
+
+    <iron-pages attr-for-selected="data-route" selected="{{route}}">
+      <login-page data-route="login" on-login="_login"></login-page>
+      <poll-app data-route="home"></poll-app>
+    </iron-pages>
+
+  </app-header-layout>
 </template>
 
 <!-- build:js scripts/app.js -->
