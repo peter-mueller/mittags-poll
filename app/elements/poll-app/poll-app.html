@@ -41,7 +41,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'poll-app',
 
       properties: {
-        user: Object
+        user: Object,
+        location: {
+          type: String,
+          computed: '_userLocation(selections)',
+          notify: true
+        }
+      },
+
+      _userLocation: function(selections) {
+        return selections[this.user.uid] || '';
       },
 
       _select: function(e) {
