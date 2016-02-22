@@ -70,6 +70,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         _open: function (e) {
           window.open(e.model.__data__.item.value.pdf);
+          e.stopPropagation();
         },
         _toArray: function (obj) {
           return Object.keys(obj).map(function (key) {
